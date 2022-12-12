@@ -1,0 +1,52 @@
+import {AppBar, Button, Grid, Typography}  from '@mui/material/index';
+import makeStyles from '@mui/material/index';
+//import Nuevo from './nuevo';
+//import Listar from './listar';
+//import Search from './buscar';
+
+const useStyles = makeStyles(theme=>({
+    fondoAppBar: {
+        backgroundColor : 'blue'
+    },
+    offSet: theme.mixins.toolbar,
+    menuBoton:{
+        marginRigth: theme.spacing(2)
+    },
+    title:{flexGrow:1}
+}))
+const ToolBar = () => {
+    const classes = useStyles()
+    return (
+        <div>
+            <Grid  item xs={3}
+                container justify='center'>
+            <AppBar className ={classes.fondoAppBar}>
+                <toolBar>
+                    <Typography variant='h6' className={classes.title}>Restaurantes</Typography>
+                    <Button
+                        variant='text'
+                        color='inherit'>
+                        href='/buscar'
+                        Buscar
+                        </Button>
+                    <Button
+                        variant='text'
+                        color='inherit'>
+                        href='/Agregar Restaurante'
+                        Nuevo
+                        </Button>
+                    <Button>
+                        variant='text'
+                        color='inherit'
+                        href='/Restautante'
+                        Listar
+                        </Button>
+                </toolBar>
+            </AppBar>
+        <div className={classes.offSet}></div>    
+        </Grid>
+        </div>   
+    )
+}
+
+export default ToolBar;
